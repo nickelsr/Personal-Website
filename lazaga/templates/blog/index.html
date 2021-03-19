@@ -79,14 +79,14 @@
       </article>
     </div>
     <div class="project">
-      <img src="{{ url_for('static', filename='images/volumetric_scatter/teapots.png') }}">
+      <img src="{{ url_for('static', filename='images/godrays/dragon_rays.png') }}">
       <article class="listing">
         <div class="header">
-          <h2><a href="{{ url_for('projects.volumetric_scattering') }}">Volumetric Scattering</a></h2>
+          <h2><a href="{{ url_for('projects.volumetric_illumination') }}">Volumetric Illumination</a></h2>
           <span>[C++]</span>
         </div>
         <p>
-          I designed and developed a volumetric scattering renderer to simulate
+          I designed and developed a volumetric Illumination renderer to simulate
           <span class="italic semibold">godrays</span>. I used a
           <span class="italic semibold">ray marching</span> approach combined with a
           <span class="italic semibold">decaying</span> property associated with radiance/space.
@@ -98,13 +98,14 @@
       <img src="{{ url_for('static', filename='images/front_page/stonks.jpg') }}">
       <article class="listing">
         <div class="header">
-          <h2><a href="{{ url_for('projects.stocks') }}">Stock price</a></h2>
+          <h2><a href="{{ url_for('projects.stocks') }}">Pacman Agents</a></h2>
           <span>[python]</span>
         </div>
         <p>
-          A web scraper I created to retrieve current stock prices. It takes a stock tick symbol as input
-          and returns the current day's high, low, open, and close. Powered by the BeautifulSoup4 python
-          library, it scrapes the desired data from Yahoo Finance, and is built on a Tkinter GUI.
+          I implemented increasingly efficient <span class="italic semibold">Intelligent Agents</span>
+          for Pacman to survive and maximize scores using <span class="italic semibold">Artificial Intelligence</span> techniques
+          including Offline Planning, Online Planning, Reinforcement Learning, Bayes Nets and
+          Hidden Markov Models.
         </p>
         <br>
       </article>

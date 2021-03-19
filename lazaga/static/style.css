@@ -23,6 +23,7 @@ aside hr {
 }
 html {
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-size: 20px;
   box-sizing: border-box;
   color: black;
   height: 100%;
@@ -31,7 +32,7 @@ html {
 }
 main {
   margin-left: 400px;
-  padding: 40px 20px;
+  padding: 40px 50px;
   display: flex;
   flex-direction: column;
 }
@@ -92,10 +93,10 @@ main div:first-child {
   color: #6d17cb;
 }
 .project > img {
-  width: 150px;
-  height: 150px;
-  margin-bottom: -160px;
-  margin-left: -100px;
+  width: 180px;
+  height: 180px;
+  margin-bottom: -180px;
+  margin-left: -130px;
   border: solid #6d17cb;
 }
 .icons {

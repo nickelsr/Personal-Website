@@ -17,6 +17,6 @@ def pathtracer():
 def clothsim():
   return render_template('projects/clothsim.html')
 
-@bp.route('/volumetric-scattering')
-def volumetric_scattering():
-  return render_template('projects/volumetric_scattering.html')
+@bp.route('/volumetric-illumination')
+def volumetric_illumination():
+  return render_template('projects/volumetric_illumination.html')
