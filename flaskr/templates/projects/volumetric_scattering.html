@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Volumetric Scattering{% endblock %}
+
+{% block content %}
+<main class="proj-page">
+  <hr>
+  <div>
+    <h1 class="title">Volumetric Scattering</h1>
+    <img src="{{ url_for('static', filename='images/volumetric_scatter/teapots.png') }}">
+  </div>
+  <hr>
+  <article class="section">
+    <h2 class="title">Spring-Mass System</h2>
+    <div class="pic-group">
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/spring_mass/noShearing.png') }}">
+        <figcaption>Structural and bending springs</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/spring_mass/onlyShearing.png') }}">
+        <figcaption>Shearing springs</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/spring_mass/allSprings.png')  }}">
+        <figcaption>All springs</figcaption>
+      </figure>
+    </div>
+    <br>
+    <p>
+      Structural, bending, and shearing springs connect the point masses that comprise the cloth
+      to create a realistically maleable surface.
+    </p>
+  </article>
+  <hr>
+  <article class="section">
+    <h2 class="title">Simulation</h2>
+    <video controls>
+      <source src="{{ url_for('static', filename='videos/clothsim/ClothSimHeavyPinned.mp4') }}">
+      <source src="{{ url_for('static', filename='videos/clothsim/ClothSimLightLessStepsPerFramePinned.mp4') }}">
+    </video>
+    <br>
+    <p>
+      Simulation of cloth physics is accomplished by updating point mass positions for each
+      frame via Verlet integration, which accounts for external forces (e.g., gravity) and
+      internal forces (springs connecting neighboring point masses).
+    </p>
+  </article>
+  <hr>
+  <article class="section">
+    <h2 class="title">Collision Handling</h2>
+    <video controls>
+      <source src="{{ url_for('static', filename='videos/clothsim/ClothSimSphereCollision.mp4') }}">
+    </video>
+    <br>
+    <p>
+      Behavior is defined for cloth point masses colliding with spheres and planes, as well
+      as self-collisions, increasing the situational simulation opportunities.
+    </p>
+  </article>
+  <hr>
+  <article class="section">
+    <h2 class="title">Shading</h2>
+    <div class="pic-group">
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimDiffuse.png')  }}">
+        <figcaption>Diffuse</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimPhong.png') }}">
+        <figcaption>Blinn-Phong</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimBumpMapping.png') }}">
+        <figcaption>Bump Mapping</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimDisplacementMapping.png')  }}">
+        <figcaption>Displacement Mapping</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimMirror.png') }}">
+        <figcaption>Environment Mirroring</figcaption>
+      </figure>
+      <figure>
+        <img class="maxw-300" src="{{ url_for('static', filename='images/clothsim/shaders/ClothSimTexture.png') }}">
+        <figcaption>Texture Mapping</figcaption>
+      </figure>
+    </div>
+    <br>
+    <p>
+      Finally, to create more rich and realistic textures and color schemes to our cloth,
+      various shaders are written in GLSL which can be attached to the cloth.
+    </p>
+  </article>
+  <hr>
+</main>
+{% endblock %}

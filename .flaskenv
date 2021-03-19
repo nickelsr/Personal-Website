@@ -1,0 +1,2 @@
+FLASK_APP=lazaga
+FLASK_ENV=development

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block content %}
+  <main class="proj-page">
+    <hr>
+    <div>
+      <h1 class="title">Stocks</h1>
+      <img src="{{ url_for('static', filename='images/stocks/Stocks.png') }}">
+      <a href="https://github.com/nickelsr/StocksToday"  target="_blank" 
+         rel="noopener noreferrer nofollow">GitHub Repo</a>
+    </div>
+    <hr>
+    <article class="section">
+      <h2 class="title">Page Locating</h2>
+      <br>
+      <p>
+        First, I examined various Yahoo Finance stock quote pages to identify
+        patterns. Luckily, the site path leading
+        to each particular stock quote is easily located by appending the stock tick symbol
+        to the end of the path, e.g., https://finance.yahoo.com/quote/GME/ for GME stock,
+        https://finance.yahoo.com/quote/GOOGL/ for GOOGL stock, etc.
+      </p>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">Data Parsing</h2>
+      <figure>
+        <img src="{{ url_for('static', filename='images/stocks/Invalid.png') }}">
+        <figcaption>Invalid query</figcaption>
+      </figure>
+      <br>
+      <p>
+        I used the BeautifulSoup4 python library to robustly parse all of the text data on
+        the stock quote page in question. I identified patterns that reflect whether the stock
+        tick symbol is valid or invalid. Invalid queries result in an error message being displayed,
+        while valid queries then parse the current calendar day's stock quote, particularly the high,
+        low, open, and close figures. 
+      </p>
+    </article>
+    <hr>
+  </main>
+{% endblock %}

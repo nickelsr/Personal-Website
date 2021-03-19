@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <main class="home-page-main-content">
+    <div>
+      <h1>Projects</h1>
+      <hr>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/pathtracer/CBbunny_big.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.pathtracer') }}">Pathtracer</a></h2>
+          <span>[C++]</span>
+        </div>
+        <p>
+          I implemented core functionality for a 3D scene renderer. Methods included
+          <span class="italic semibold">ray tracing, Monte Carlo Integration</span>, and light transport via
+          <span class="italic semibold">BSDF</span>'s. Optimization techniques to decrease rendering time include
+          <span class="italic semibold">Bounding Volume Heirarchy Acceleration</span> and
+          <span class="italic semibold">Adaptive Sampling</span>.
+        </p>
+        <br>
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/stonks.jpg') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.stocks') }}">Stock price</a></h2>
+          <span>[python]</span>
+        </div>
+        <p>
+          A web scraper I created to retrieve current stock prices. It takes a stock tick symbol as input
+          and returns the current day's high, low, open, and close. Powered by the BeautifulSoup4 python
+          library, it scrapes the desired data from Yahoo Finance, and is built on a Tkinter GUI.
+        </p>
+        <br>
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/Website.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="https://github.com/nickelsr/NickLazaga.com" target="_blank" 
+                 rel="noopener noreferrer nofollow">This website</a></h2>
+          <span>[python, flask, html, css]</span>
+        </div>
+        <p>
+          I built this website to showcase my work and to add new web developing + frontend skills to my toolbelt.
+          I used Flask and HTML/CSS to create this website, which is hosted from my Raspberry Pi. I'll also be using
+          this new knowledge to create web app versions of certain projects and host them here, so interested parties
+          don't have to download or install them before using! Neat!
+        </p>
+        <br />
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/mirroredCloth.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.clothsim') }}">Cloth Simulator</a></h2>
+          <span>[C++]</span>
+        </div>
+        <p>
+          I implemented a real-time cloth simulator by modeling cloth material as a
+          <span class="italic semibold">spring-mass system</span>. I built the data structures
+          which represent the cloth and the constraints that define the behavior.
+          <span class="italic semibold">Verlet Integration</span> was employed to derive cloth
+          particles updated positions at each new timestep. Finally, various 
+          <span class="italic semibold">shaders</span> were written including
+          <span class="italic semibold">Blinn-Phong</span>, 
+          <span class="italic semibold">Displacement Mapping</span>, 
+          and <span class="italic semibold">Environment-mapped Reflections</span>.
+        </p>
+        <br>
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/volumetric_scatter/teapots.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.volumetric_scattering') }}">Volumetric Scattering</a></h2>
+          <span>[C++]</span>
+        </div>
+        <p>
+          I designed and developed a volumetric scattering renderer to simulate
+          <span class="italic semibold">godrays</span>. I used a
+          <span class="italic semibold">ray marching</span> approach combined with a
+          <span class="italic semibold">decaying</span> property associated with radiance/space.
+        </p>
+        <br>
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/stonks.jpg') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.stocks') }}">Stock price</a></h2>
+          <span>[python]</span>
+        </div>
+        <p>
+          A web scraper I created to retrieve current stock prices. It takes a stock tick symbol as input
+          and returns the current day's high, low, open, and close. Powered by the BeautifulSoup4 python
+          library, it scrapes the desired data from Yahoo Finance, and is built on a Tkinter GUI.
+        </p>
+        <br>
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/Website.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="https://github.com/nickelsr/NickLazaga.com">This website</a></h2>
+          <span>[python, flask, html, css]</span>
+        </div>
+        <p>
+          I built this website to showcase my work, as well as my ability to take on new challenges. I learned
+          Flask and HTML/CSS to create this project. I'll also be using this new knowledge to create web app
+          versions of certain projects and host them here, so interested parties don't have to download or
+          install my projects to use them! Neat! This website is hosted from my Raspberry Pi.
+        </p>
+        <br />
+      </article>
+    </div>
+    <div class="project">
+      <img src="{{ url_for('static', filename='images/front_page/mirroredCloth.png') }}">
+      <article class="listing">
+        <div class="header">
+          <h2><a href="{{ url_for('projects.pathtracer') }}">Cloth Simulator</a></h2>
+          <span>[C++]</span>
+        </div>
+        <p>
+          I implemented a real-time cloth simulator by modeling cloth material as a
+          <span class="italic semibold">spring-mass system</span>. I built the data structures
+          which represent the cloth and the constraints that define the behavior.
+          <span class="italic semibold">Verlet Integration</span> was employed to derive cloth
+          particles updated positions at each new timestep. Finally, various 
+          <span class="italic semibold">shaders</span> were written including
+          <span class="italic semibold">Blinn-Phong</span>, 
+          <span class="italic semibold">Displacement Mapping</span>, 
+          and <span class="italic semibold">Environment-mapped Reflections</span>.
+        </p>
+        <br>
+      </article>
+    </div>
+  </main>
+{% endblock %}

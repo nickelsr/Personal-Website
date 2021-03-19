@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Pathtracer{% endblock %}
+
+{% block content %}
+  <main class="proj-page">
+    <hr>
+    <div>
+      <h1 class="title">Pathtracer</h1>
+      <img src="{{ url_for('static', filename='images/pathtracer/CBbunny_big.png') }}">
+    </div>
+    <hr>
+    <article class="section">
+      <h2 class="title">Ray Generation and Intersection</h2>
+      <figure>
+        <img src="{{ url_for('static', filename='images/pathtracer/CBspheres.png') }}">
+      </figure>
+      <br>
+      <p>
+        Rays are generated in camera space and directed toward a scene to be rendered,
+        where a radiance sample is collected from the ray-surface intersection point. 
+        Triangle and sphere intersection is defined, allowing ray-surface intersection
+        with the surfaces of these types of primitive shapes. Now, the program is capable
+        of rendering a scene with models created using the aforementioned primitives.
+      </p>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">BVH acceleration</h2>
+      <figure>
+        <img src="{{ url_for('static', filename='images/pathtracer/CBdragon.png') }}">
+      </figure>
+      <br>
+      <p>
+        Bounding Volume Heirarchy Acceleration is implemented to optimize performance of
+        ray-surface intersection detection, drastically reducing rendering time.
+      </p>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">Direct Illumination</h2>
+      <figure>
+        <img src="{{ url_for('static', filename='images/pathtracer/directBunny.png') }}">
+      </figure>
+      <br>
+      <p>BSDF's (Bidirectional Scattering Distribution Function) are introduced to create
+        more realistic shading. a Diffuse BSDF is employed for all surfaces except for our
+        light source, where an Emmisive BSDF is used instead.</p>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">Global Illumination</h2>
+      <div class="pic-group">
+        <figure>
+          <img src="{{ url_for('static', filename='images/pathtracer/Direct.png')  }}">
+          <figcaption>Direct Illumination</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ url_for('static', filename='images/pathtracer/Indirect.png') }}">
+          <figcaption>Indirect Illumination</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ url_for('static', filename='images/pathtracer/Global.png') }}">
+          <figcaption>Global Illumination (sum of Direct and Indirect Illumination)</figcaption>
+        </figure>
+      </div>
+      <br>
+      <p>
+        Global Illumination is acheived by implementing Indirect Illumination and summing its
+        resultant radiance with our Direct Illumination radiance. Indirect Illumination is 
+        accomplished by generating new outgoing rays from the ray-surface intersection point
+        to the surrounding environment and collecting samples of radiance being emitted back
+        to the intersection point as defined by the corresponding BSDF.
+      </p>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">Adaptive Sampling</h2>
+      <div class="pic-group">
+        <figure>
+          <img src="{{ url_for('static', filename='images/pathtracer/bunny.png') }}">
+          <figcaption>Rendered at 2048 samples/pixel with adaptive sampling</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ url_for('static', filename='images/pathtracer/bunny_rate.png') }}">
+          <figcaption>Sample rate map spectrum from blue (less samples) to red (more samples).</figcaption>
+        </figure>
+      </div>
+      <br>
+      <p>
+        Finally, Adaptive Sampling is implemented to further reduce rendering times. The
+        number of samples taken of each pixel to be rendered until now has been constant among
+        pixels. Now, after taking a sample, we check if the addition of this samples radiance
+        with the running Monte Carlo estimate makes no difference. In other words, we have 
+        reached a satisfactory level of convergence, and we cease generating more samples for
+        this area.
+      </p>
+    </article>
+    <hr>
+  </main>
+{% endblock %}
