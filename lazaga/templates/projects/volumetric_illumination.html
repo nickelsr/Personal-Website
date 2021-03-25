@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}Godrays{% endblock %}
+{% block title %}God rays{% endblock %}
 
 {% block content %}
 <main class="proj-page">
   <hr>
   <div>
-    <h1 class="title">Godrays</h1>
+    <h1 class="title">God rays</h1>
     <img src="{{ url_for('static', filename='images/godrays/dragon_rays.png') }}">
   </div>
   <hr>
   <article class="section">
     <h2 class="title">Ray Marching</h2>
+    <br>
+    <p>
+      I extended my pathtracing renderers capabilities to include volumetric particle rendering in addition to surface rendering. 
+      This was achieved by sampling volumetric areas on our rays path, preceding ray/surface intersection, for intersection with
+      a light sources emission path, and combining that sample with the running Monte Carlo estimate. This creates a sunbeam-like 
+      effect (god ray).
+    </p>
+    <br>
     <div class="pic-group">
       <figure>
         <img class="maxw-300" src="{{ url_for('static', filename='images/godrays/Coil.png') }}">
@@ -19,7 +27,7 @@
       </figure>
       <figure>
         <img class="maxw-300" src="{{ url_for('static', filename='images/godrays/Coil_rays.png') }}">
-        <figcaption>Godrays enabled</figcaption>
+        <figcaption>God rays enabled</figcaption>
       </figure>
       <figure>
         <img class="maxw-300" src="{{ url_for('static', filename='images/godrays/teapots.png')  }}">
@@ -27,16 +35,9 @@
       </figure>
       <figure>
         <img class="maxw-300" src="{{ url_for('static', filename='images/godrays/teapots_rays.png') }}">
-        <figcaption>Godrays enabled</figcaption>
+        <figcaption>God rays enabled</figcaption>
       </figure>
     </div>
-    <br>
-    <p>
-      I extended my pathtracing renderers capabilities to include volumetric particle rendering in addition to surface rendering. 
-      This was achieved by sampling volumetric areas on our rays path, preceding ray/surface intersection, for intersection with
-      a light sources emission path, and combining that sample with the running Monte Carlo estimate. This creates a sunbeam-like 
-      effect (godray).
-    </p>
   </article>
   <hr>
 </main>

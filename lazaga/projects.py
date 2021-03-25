@@ -20,3 +20,7 @@ def clothsim():
 @bp.route('/volumetric-illumination')
 def volumetric_illumination():
   return render_template('projects/volumetric_illumination.html')
+
+@bp.route('/pacman')
+def pacman():
+  return render_template('projects/pacman.html')

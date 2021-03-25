@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Pacman{% endblock %}
+
+{% block content %}
+  <main class="proj-page">
+    <hr>
+    <div>
+      <h1 class="title">Agent Models</h1>
+      <video controls>
+        <source src="{{ url_for('static', filename='videos/pacman/QLearningAgent.mp4') }}">
+      </video>
+    </div>
+    <hr>
+    <article class="section">
+      <h2 class="title">Search Agents</h2>
+      <br>
+      <p>
+        I implemented search agents for pacman to navigate mazes and eat all of the food using A*
+        graph search, utilized heuristics, and tried a greedy approach.
+      </p>
+      <br>
+      <figure>
+        <video controls>
+          <source src="{{ url_for('static', filename='videos/pacman/AstarMaze.mp4') }}">
+        </video>
+        <figcaption>Maze search using A*</figcaption>
+      </figure>
+      <figure>
+        <video controls>
+          <source src="{{ url_for('static', filename='videos/pacman/CornersFoodHeuristic.mp4') }}">
+        </video>
+        <figcaption>Maze search using A* with added heuristics</figcaption>
+      </figure>
+      <figure>
+        <video controls>
+          <source src="{{ url_for('static', filename='videos/pacman/SearchEatAllDots.mp4') }}">
+        </video>
+        <figcaption>Greedy agent finds complete path in under 1 second.</figcaption>
+      </figure>
+    </article>
+    <hr>
+    <article class="section">
+      <h2 class="title">Reinforcement Learning</h2>
+      <br>
+      <p>
+        I implemented a Q-Learning Agent and trained it in simulation games, where it
+        learned how to survive and score points!
+      </p>
+      <br>
+      <figure>
+        <video controls>
+          <source src="{{ url_for('static', filename='videos/pacman/QLearningAgent.mp4') }}">
+        </video>
+        <figcaption>Q-Learning Agent after 50 training games</figcaption>
+      </figure>      
+    </article>
+    <hr>
+  </main>
+{% endblock %}
